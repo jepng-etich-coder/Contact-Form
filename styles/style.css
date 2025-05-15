@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+}
+
+form {
+  width: 600px;
+  border: solid 1px magenta;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3%;
+}
+
+input,
+textarea,
+#btn {
+  border-radius: 5px;
+  padding: 0.5em 0;
+  margin: 0.5em 0 1em 0;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.radio-wrapper {
+  border-radius: solid 1px red;
+}
