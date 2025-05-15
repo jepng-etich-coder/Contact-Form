@@ -5,39 +5,84 @@
 }
 
 body {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  color: black;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
 }
 
-form {
-  width: 600px;
-  border: solid 1px magenta;
-  padding: 1.5em;
+img,
+#error-msg {
+  display: none;
+}
+
+/* my form styling */
+#myForm {
+  border: solid 1px black;
   display: flex;
   flex-direction: column;
-  border-radius: 3%;
+  padding: 2em;
+  max-width: 600px;
+}
+#firstName,
+#lastName,
+#emailAddress {
+  padding: 0.25em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+  /* max-width: 1400px; */
+  margin-bottom: 0.5em;
 }
 
-input,
-textarea,
-#btn {
-  border-radius: 5px;
-  padding: 0.5em 0;
-  margin: 0.5em 0 1em 0;
-}
-.container {
+.option {
+  border: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
+  padding: 0.25em;
+  width: 100%;
+}
+.user-consent {
+  display: flex;
+  justify-content: center;
 }
 
 textarea {
+  width: 100%; /* or a fixed width like 300px */
+  max-width: 100%; /* prevents overflow */
   resize: vertical;
+  border: 1px solid #ccc;
 }
 
-.radio-wrapper {
-  border-radius: solid 1px red;
+.username,
+.query-options,
+.user-consent {
+  display: flex;
+  gap: 0.5em;
 }
+/* .username,
+.query-options,
+.user-consent {
+  display: flex;
+  gap: 0.5em;
+}
+
+#firstName,
+#lastName {
+  width: 100%;
+}
+
+.option {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.user-consent {
+  display: flex;
+  justify-content: center;
+} */

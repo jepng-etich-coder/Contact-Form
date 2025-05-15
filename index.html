@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact US</title>
-
+    <title>Contact-form</title>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,62 +15,100 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <!-- form details -->
-    <form>
-      <h1>Contact US</h1>
+    <!-- form submission success message -->
+    <div class="toast-hidden">
+      <img
+        src="./assets/images/icon-success-check.svg"
+        alt="icon-success-check"
+      />
+      <p>
+        Message sent! <br />
+        Thanks for completing the form. We´ll get in touch soon!
+      </p>
+    </div>
+
+    <!-- form -->
+    <form id="myForm">
+      <!-- heading -->
+      <h1>Contact Us</h1>
       <!-- username -->
-      <div class="container">
-        <div>
+      <div class="username">
+        <div class="first-name">
           <div>
-            <label for="firstname">First Name <span>*</span></label>
+            <label for="firstname"
+              >First Name <span id="required-txt">*</span>
+            </label>
           </div>
           <div>
-            <input type="text" id="firstname" required />
-          </div>
-        </div>
-        <div>
-          <div>
-            <label for="lastname">Last Name <span>*</span></label>
-          </div>
-          <div>
-            <input type="text" id="lastname" required />
+            <input type="text" id="firstName" required />
           </div>
         </div>
+        <div class="last-name">
+          <div>
+            <label for="lastname"
+              >Last Name <span id="required-txt">*</span></label
+            >
+          </div>
+          <div><input type="text" id="lastName" required /></div>
+        </div>
+        <p id="error-msg">This Field is required</p>
       </div>
-      <!-- email address -->
-      <label for="email">Email <span>*</span></label>
-      <input type="text" id="email" required />
-      <!-- Enquiries -->
-      <div>
-        <label for="querytype">Query Type <span>*</span></label>
-      </div>
-      <div class="container">
+      <!-- email  -->
+      <!-- <div class="email"> -->
+      <label for="email">Email <span id="required-txt">*</span></label>
+      <input type="email" id="emailAddress" required />
+      <p id="error-msg">Please enter a valid email address</p>
+      <!-- </div> -->
+      <!-- query types -->
+      <div class="query-type">
         <div>
-          <label> <input type="radio" /> General Enquiries </label>
+          <label for="query types"
+            >Query Types <span id="required-txt">*</span></label
+          >
         </div>
-        <div>
-          <label
-            ><input type="radio" required />
-            <input type="text" id="support" placeholder="Support Request " />
-          </label>
+        <div class="query-options">
+          <div class="option">
+            <img
+              src="./assets/images/icon-radio-selected.svg"
+              alt="radio-button-selected"
+            />
+            <input type="radio" name="query" value="General Enquiry" /> General
+            Enquiry <br />
+          </div>
+          <div class="option">
+            <img
+              src="./assets/images/icon-radio-selected.svg"
+              alt="radio-button-selected"
+            />
+            <input type="radio" name="query" value="Support Request" /> Support
+            Request <br />
+          </div>
+          <p id="error-msg">Please select a query type</p>
         </div>
-      </div>
-      <!-- message -->
-      <label>Message <span>*</span></label>
-      <textarea id="message"></textarea>
-      <!-- consent -->
-      <div class="checkbox-group">
-        <label>
-          <p>
-            <span> <input type="checkbox" /></span>I consent to being contacted
-            by the team
-          </p>
-          <!-- <span id="checkbox"><input type="checkbox" required /></span>I consent
-          to being contacted by the team <span>*</span> -->
-        </label>
       </div>
 
-      <!-- submit -->
+      <!-- message -->
+      <!-- <div class="msg"> -->
+      <label for="message">Message <span id="required-txt">*</span></label>
+      <textarea name="message" id="msg-txt"></textarea>
+      <p id="error-msg">This field is required</p>
+      <!-- </div> -->
+      <!-- consent -->
+      <div class="user-consent">
+        <img
+          src="./assets/images/icon-checkbox-check.svg"
+          alt="checkbox-check"
+        />
+        <input type="checkbox" name="user-consent" value="user-consent" />
+        <p>
+          I consent to being contacted by the team
+          <span id="required-txt">*</span>
+        </p>
+      </div>
+      <p id="error-msg">
+        To submit this form, please consent to being contacted
+      </p>
+      <!-- form submit-->
       <button id="btn">Submit</button>
     </form>
   </body>
